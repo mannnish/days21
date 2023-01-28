@@ -1,3 +1,4 @@
+import 'package:days21/views/add_habit.dart';
 import 'package:days21/views/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const SplashScreen(),
+      // home: const AddHabit(),
     );
   }
 }

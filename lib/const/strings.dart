@@ -9,6 +9,7 @@ class AppConstant {
   static const String FCMTOKEN = 'fcmToken';
   static const String DAY_SCHEDULE = 'daySchedule';
   static const String USER_COLLECTION = 'users';
+  static const String HABIT_COLLECTION = 'habits';
 
   static const List<String> presetValuesStrings = [
     'Miscellanous',

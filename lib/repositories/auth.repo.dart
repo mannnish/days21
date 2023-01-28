@@ -31,7 +31,6 @@ class AuthRepo {
       await UserModel.toPrefs();
 
       if (!await isRegistered(UserModel.uid)) {
-        // FIXME : push registeration page and use this code to save data and pop the page
         FirebaseFirestore firestore = FirebaseFirestore.instance;
         firestore.collection(AppConstant.USER_COLLECTION).doc(UserModel.uid).set(UserModel.toJson());
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const DaySchedule()));

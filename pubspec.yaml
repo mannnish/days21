@@ -23,7 +23,9 @@ dependencies:
   firebase_core_web: 1.7.3
   firebase_core_platform_interface: 4.5.1
   firebase_messaging:
-
+  percent_indicator:
+  animated_text_kit:
+  # syncfusion_flutter_charts:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
