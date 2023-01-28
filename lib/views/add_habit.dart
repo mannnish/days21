@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore_web/cloud_firestore_web.dart';
 import 'package:days21/const/app_bar.dart';
 import 'package:days21/const/strings.dart';
 import 'package:days21/models/habit.model.dart';
@@ -33,7 +34,6 @@ class _AddHabitState extends State<AddHabit> {
   Widget saveButton() {
     return GestureDetector(
       onTap: () async {
-        // TODO : Implement if-else nlp xD
         bool isBoolean = selectedMetric == metrics[0];
         if (title == '') {
           return;
@@ -48,6 +48,7 @@ class _AddHabitState extends State<AddHabit> {
 
         final CollectionReference userHabitCollection =
             FirebaseFirestore.instance.collection(AppConstant.USER_COLLECTION).doc(UserModel.uid).collection('habits');
+        final CollectionReference dummyColl = FirebaseFirestore.instance.collection(AppConstant.HABIT_COLLECTION);
         HabitModel obj = HabitModel(
           title: title,
           isBoolean: isBoolean,
@@ -55,8 +56,12 @@ class _AddHabitState extends State<AddHabit> {
           presetValue: selectedPreset,
           intervals: [],
         );
+        var dummyMap = obj.toJson();
+        dummyMap[AppConstant.FCMTOKEN] = UserModel.fcmToken;
+        dummyMap[AppConstant.UID] = UserModel.uid;
         Navigator.pop(context);
         await userHabitCollection.add(obj.toJson());
+        await dummyColl.add(dummyMap);
       },
       child: Container(
         alignment: Alignment.centerRight,
@@ -89,6 +94,22 @@ class _AddHabitState extends State<AddHabit> {
     );
   }
 
+  void check(t) {
+    if (t.contains('wake') || t.contains('waking')) {
+      selectedPreset = AppConstant.presetValuesStrings[1];
+    } else if (t.contains('college') || t.contains('work') || t.contains('job')) {
+      selectedPreset = AppConstant.presetValuesStrings[2];
+    } else if (t.contains('study') || t.contains('read')) {
+      selectedPreset = AppConstant.presetValuesStrings[3];
+    } else if (t.contains('relax') || t.contains('chill')) {
+      selectedPreset = AppConstant.presetValuesStrings[4];
+    } else if (t.contains('gym') || t.contains('health') || t.contains('workout') || t.contains('exercise')) {
+      selectedPreset = AppConstant.presetValuesStrings[5];
+    } else if (t.contains('walk') || t.contains('step')) {
+      selectedPreset = AppConstant.presetValuesStrings[7];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -107,9 +128,9 @@ class _AddHabitState extends State<AddHabit> {
                 const SizedBox(height: 30),
                 headerText('Project Name'),
                 textInput(title, (val) {
-                  setState(() {
-                    title = val;
-                  });
+                  title = val;
+                  check(title.toLowerCase());
+                  setState(() {});
                 }, 'Enter Habit Name here'),
                 const SizedBox(height: 20),
                 Row(

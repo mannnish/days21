@@ -7,6 +7,7 @@ import 'package:days21/models/habit.model.dart';
 import 'package:days21/models/user.model.dart';
 import 'package:days21/repositories/auth.repo.dart';
 import 'package:days21/views/add_habit.dart';
+import 'package:days21/views/walking_habit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -132,15 +133,12 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(height: verticalPadding),
         Row(
           children: [
-            // Container(
-            //   width: 22,
-            //   height: 22,
-            //   decoration: BoxDecoration(
-            //     color: CupertinoColors.systemBlue,
-            //     borderRadius: BorderRadius.circular(20),
-            //   ),
-            // ),
-            // const SizedBox(width: 10),
+            Icon(
+              AppConstant.presetIcons[habit.presetValue],
+              color: CupertinoColors.systemGrey,
+              size: 20,
+            ),
+            const SizedBox(width: 12),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -209,6 +207,17 @@ class _HomeScreenState extends State<HomeScreen> {
       color: unselectedBgColor,
       child: InkWell(
         onTap: () async {
+          if (habit.title.toLowerCase().contains('steps') || habit.title.toLowerCase().contains('walk')) {
+            String newstr = habit.title.replaceAll(RegExp(r'[^0-9]'), '');
+            int? stepsTarget = int.tryParse(newstr);
+            if (stepsTarget != null && stepsTarget != 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => WalkingHabit(taget: stepsTarget, selectedHabitId: docId)),
+              );
+              return;
+            }
+          }
           await Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => HabitView(selectedHabitId: docId)),

@@ -65,7 +65,7 @@ packages:
     source: hosted
     version: "5.7.7"
   cloud_firestore_web:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: cloud_firestore_web
       url: "https://pub.dartlang.org"
@@ -85,6 +85,48 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  device_info_plus:
+    dependency: transitive
+    description:
+      name: device_info_plus
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.4"
+  device_info_plus_linux:
+    dependency: transitive
+    description:
+      name: device_info_plus_linux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
+  device_info_plus_macos:
+    dependency: transitive
+    description:
+      name: device_info_plus_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.3"
+  device_info_plus_platform_interface:
+    dependency: transitive
+    description:
+      name: device_info_plus_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.6.1"
+  device_info_plus_web:
+    dependency: transitive
+    description:
+      name: device_info_plus_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+  device_info_plus_windows:
+    dependency: transitive
+    description:
+      name: device_info_plus_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
   fake_async:
     dependency: transitive
     description:
@@ -142,7 +184,7 @@ packages:
     source: hosted
     version: "4.5.1"
   firebase_core_web:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: firebase_core_web
       url: "https://pub.dartlang.org"
@@ -226,6 +268,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.2+1"
+  health:
+    dependency: "direct main"
+    description:
+      name: health
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   http_parser:
     dependency: transitive
     description:
@@ -234,7 +283,7 @@ packages:
     source: hosted
     version: "4.0.2"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
@@ -310,6 +359,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.1"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.2.0"
+  permission_handler_android:
+    dependency: transitive
+    description:
+      name: permission_handler_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.2.0"
+  permission_handler_apple:
+    dependency: transitive
+    description:
+      name: permission_handler_apple
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.0.7"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.9.0"
+  permission_handler_windows:
+    dependency: transitive
+    description:
+      name: permission_handler_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   platform:
     dependency: transitive
     description:

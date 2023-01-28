@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:days21/const/appcolors.dart';
 import 'package:days21/const/appconfig.dart';
@@ -409,7 +411,6 @@ class _HabitViewState extends State<HabitView> {
                   child: TableCalendar(
                     onFormatChanged: (format) => {},
                     onDaySelected: (date, events) {
-                      // TODO : ADD AND REMOVE DATE
                       if (habit.isInRange(date)) {
                         habit.removeInterval(date);
                       } else {
@@ -439,7 +440,7 @@ class _HabitViewState extends State<HabitView> {
       animation: true,
       startAngle: 0.0,
       animationDuration: Duration.millisecondsPerSecond,
-      percent: intervalInfo[1] / intervalInfo[0],
+      percent: min(intervalInfo[1] / intervalInfo[0], 1.0),
       progressColor: systemPurple,
       center: FittedBox(
         child: Text(
