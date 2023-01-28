@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "374477009467",
+    "project_id": "codenight-9",
+    "storage_bucket": "codenight-9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374477009467:android:ca9a71285e5e1d50f9a21e",
+        "android_client_info": {
+          "package_name": "com.codenight.days21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374477009467-gf8u1iq6j02l8hjtptnj5bc2g0ch6l15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codenight.days21",
+            "certificate_hash": "236f6fd572f2d9c7307ad98ff9073d9736607063"
+          }
+        },
+        {
+          "client_id": "374477009467-ph7h4arpc368qkq80ndf1dmm5474n5ct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEiQsvXFOosQ8j1wcjX12gK_ds6gQrvPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374477009467-ph7h4arpc368qkq80ndf1dmm5474n5ct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
