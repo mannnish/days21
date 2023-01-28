@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class PresetModel {
   late String presetValue;
   late DateTime startTime;
@@ -10,7 +12,9 @@ class PresetModel {
   });
 
   PresetModel.fromJson(Map<String, dynamic> json) {
-    //..
+    presetValue = json["preset_value"];
+    startTime = (json["start_time"] as Timestamp).toDate();
+    endTime = (json["end_time"] as Timestamp).toDate();
   }
 
   toJson() {
