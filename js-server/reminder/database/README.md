@@ -1,0 +1,1 @@
+- add `serviceAccountKey.json` here obtained from firebase (to connect with js application)

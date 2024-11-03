@@ -1,0 +1,1 @@
+- add `project_details.json` here obtained from firebase (to connect with js application)

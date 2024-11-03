@@ -9,7 +9,7 @@
 	- CodeNight by Squareboat
 	- Date : 29th January 2023
 - Developed by:
-	- Manish kumar
+	- Manish kumarx
 	- Abdul samad
 	- Lokesh
 	- Deepak
